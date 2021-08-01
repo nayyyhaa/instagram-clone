@@ -1,38 +1,254 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background: #f8f8f8f6;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.header__logo-image:hover {
+  background: gray;
+}
+
+/* Header */
+
+.header_content {
+  background: white;
+  border-bottom: 0.5px solid #b9b6b6;
+}
+
+.header {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  padding: 0.75rem 0;
+  margin: auto;
+}
+
+.header__logo-image {
+  height: 61px;
+  width: 130px;
+}
+
+.profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header-user-img {
+  border-radius: 50%;
+  height: 50px;
+  box-shadow: 0 0 0 2px white, 0 0 0 3px black;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* UserInfo */
+
+.userInfo {
+  display: flex;
+  min-height: 15vh;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: 1.3em auto;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-img {
+  border-radius: 50%;
+  height: 150px;
+}
+
+.userBio {
+  min-height: 12vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+.user-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.bio {
+  font-size: 1rem;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1026px) {
+
+  .userInfo {
+    width: auto;
+  }
+  .user-img {
+    height: 6rem;
+  }
+
+}
+
+/* PhotoGrid */
+
+.photosdiv {
+  display: grid;
+  justify-content: center;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  width: 50%;
+  padding: 0.75rem;
+  margin: auto;
+}
+
+.grid-images {
+  margin: auto;
+  display: block;
+  height: 293px;
+  width: 293px; 
+}
+
+@media screen and (max-width: 1026px) {
+  .photosdiv {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+}
+
+/*Edit Page */
+
+.backDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 2%;
+  right: 4%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.modal {
+  min-height: 60vh;
+  width: 60%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.modal_content {
+  padding: 4rem;
+}
+
+.edit-userInfo {
+  display: grid;
+  justify-content: center;
+  width: 70%;
+  margin: 1.3em auto;
+  align-items: center;
+}
+
+.edit-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 0.5rem 0;
+}
+
+.edit-user-img {
+  margin: 1rem 2rem 1rem 0;
+  border-radius: 50%;
+  height: 150px;
+  flex: 1;
+}
+
+.upload-img {
+  color: blue;
+  font-weight: bold;
+}
+
+.edit-info-display {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+}
+
+.edit-field-name {
+  flex: 1;
+  text-align: left;
+}
+
+.edit-user-field {
+  flex: 2;
+  border: 1px solid black;
+  margin-left: 1rem;
+}
+
+.save-btn {
+  position: absolute;
+  right: 7%;
+  background: rgb(26 171 255);
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-radius:0.5rem;
+  border: none;
+  color: white;
+}
+
+@media screen and (max-width: 1026px) {
+  .edit-user-img {
+    height: 6rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  textarea {
+    width: 50px;
+  }
+}
+
+/* overall media query */
+
+@media screen and (max-width: 500px) {
+  * {
+    font-size: 99.5%;
+  }
+  .upload-img {
+    font-size: 90.5%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 95.5%;
   }
 }
