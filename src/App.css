@@ -28,17 +28,17 @@ body {
 
 .header {
   display: flex;
+  align-items: center;
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
-  padding: 0.75rem 0;
+  padding: 0.35rem 0;
   margin: auto;
 }
 
 .header__logo-image {
-  height: 61px;
-  width: 130px;
+  height: 2.5rem;
 }
 
 .profile-btn {
@@ -49,7 +49,7 @@ body {
 
 .header-user-img {
   border-radius: 50%;
-  height: 50px;
+  height: 2.5rem;
   box-shadow: 0 0 0 2px white, 0 0 0 3px black;
   pointer-events: none;
 }
@@ -67,11 +67,12 @@ body {
 
 .user-img {
   border-radius: 50%;
-  height: 150px;
+  height: 7rem;
+  margin: 0 1rem;
 }
 
 .userBio {
-  min-height: 12vh;
+  min-height: 14vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -233,6 +234,15 @@ body {
 
   textarea {
     width: 50px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .edit-info {
+    flex-wrap: wrap;
+  }
+  .edit-user-field {
+    margin: 0;
   }
 }
 
