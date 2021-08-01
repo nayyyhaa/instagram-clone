@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Instagram from './../../assets/images/instagram-new-logo.png';
-import EditUser from './../EditPage/edit'
+import EditUser from './../EditPage/edit';
 const Header = ({userImg, name, userName, bio, setName, setUserName, setBio}) => {
   let [editmodeon, setEditmodeon] = useState(false);
 

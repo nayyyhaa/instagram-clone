@@ -54,30 +54,79 @@ body {
 
 .userInfo {
   display: flex;
+  flex-direction: column;
   min-height: 15vh;
-  justify-content: space-evenly;
-  width: 70%;
-  margin: 1.3em auto;
+  margin: 1.3em auto 0;
   align-items: center;
 }
 
+.user-profile {
+  display: flex;
+  text-align: left;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.6);
+  width: 100%;
+  padding: 1rem;
+}
 .user-img {
   border-radius: 50%;
   height: 7rem;
-  margin: 0 1rem;
+  margin: 0 1rem 0.5rem;
 }
 
 .userBio {
   min-height: 14vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: left;
+}
+
+.edit-btn {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.user_description {
+  padding: 0 1rem;
+}
+.username {
+  display: inline-block;
+  padding-bottom: 0.8rem;
+  font-weight: 400;
+  font-size: 1.5em;
 }
 .user-count {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.6);
+}
+
+.number {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.description {
+  color: #999;
+}
+
+.gallery-nav ul {
+  width: 100%;
+  padding: 0;
+}
+
+.gallery-nav li {
+  display: inline-block;
+  padding: 0 1.5rem;
+}
+
+.option {
+  cursor: pointer;
 }
 
 .bio {
@@ -95,7 +144,9 @@ body {
   .user-img {
     height: 6rem;
   }
-
+  .gallery-nav li {
+    padding: 0 0.5rem;
+  }
 }
 
 /* PhotoGrid */
