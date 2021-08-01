@@ -1,3 +1,3 @@
 # instagram-clone
 
-This is an Istagram clone made with using ReactJS
+This is an Instagram clone made with using ReactJS

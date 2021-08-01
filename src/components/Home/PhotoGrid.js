@@ -16,9 +16,12 @@ const Header = () => {
           {
             photos.map((photo) => {
             return (
-                <>
-                <img className="grid-images" src={photo} alt="Insta image"></img>
-                </>
+                <div className="img_wrap">
+                  <img className="grid-images" src={photo} alt="Insta image"/>
+                  <p className="likes">
+                    <i class="fas fa-heart"></i>
+                    <p className="likes_count">5</p></p>
+                </div>
               )
             })
           }
