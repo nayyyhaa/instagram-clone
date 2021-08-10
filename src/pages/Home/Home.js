@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Icon from './../../assets/images/user.jpg';
-import Header from './../../components/Home/header';
+import Header from '../../components/Home/Header';
 import UserInfo from './../../components/Home/UserInfo';
 import PhotoGrid from './../../components/Home/PhotoGrid';
 
 let Home = () => {
-  let [name, setName] = useState("Neha Gupta");
-  let [userName, setUserName] = useState("nayyyhaa");
-  let [bio, setBio] = useState("Through my lens.");
-
         return (
             <div>
-                <Header userImg = {Icon} name={name} userName={userName} bio={bio} setName={setName} setUserName={setUserName} setBio={setBio}/>
-                <UserInfo userImg = {Icon} name={name} userName={userName} bio={bio} setName={setName} setUserName={setUserName} setBio={setBio}/>
+                <Header userImg = {Icon}/>
+                <UserInfo userImg = {Icon}/>
                 <PhotoGrid/>
             </div>
         )

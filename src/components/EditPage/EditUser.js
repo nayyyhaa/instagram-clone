@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import {editUserDetails} from "../../redux/actions/userProfileActions";
 
-const EditUser = ({toggle, userImg, name, userName, bio, setName, setUserName, setBio}) => {
+const EditUser = ({toggle}) => {
+    const userDetails = useSelector((state) => state.userDetails);
+    const {name, username, bio, userImg} = userDetails[0];
     let handleClick = () => {
         toggle();
         console.log("open")
     };
+    let dispatch = useDispatch();
 
   let [tname, setNameTemp] = useState(name);
-  let [tuserName, setUserNameTemp] = useState(userName);
+  let [tuserName, setUserNameTemp] = useState(username);
   let [tbio, setBioTemp] = useState(bio);
 
   const inputNameHandler = (e) => {
@@ -22,9 +27,16 @@ const EditUser = ({toggle, userImg, name, userName, bio, setName, setUserName, s
     }
 
     const saveAll = () => {
-        setName(tname);
-        setUserName(tuserName);
-        setBio(tbio);
+        let editedState = {
+            userDetails : 
+            [{
+                name: tname,
+                username: tuserName,
+                bio: tbio,
+                userImg: userImg
+            }]
+        }
+        dispatch(editUserDetails(editedState));
         handleClick();
     }
 
@@ -39,7 +51,7 @@ const EditUser = ({toggle, userImg, name, userName, bio, setName, setUserName, s
                     <div className="edit-info">
                         <img className="edit-user-img" src={userImg} alt="User image"></img>
                         <div className="edit-info-display">
-                            <h2>{userName}</h2>
+                            <h2>{username}</h2>
                             <p className="upload-img">Change Profile Photo</p>
                         </div>
                     </div>

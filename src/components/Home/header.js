@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-
+import { useSelector, useDispatch } from "react-redux";
 import Instagram from './../../assets/images/instagram-new-logo.png';
-import EditUser from './../EditPage/edit';
-const Header = ({userImg, name, userName, bio, setName, setUserName, setBio}) => {
+import EditUser from '../EditPage/EditUser';
+const Header = () => {
+    const userDetails = useSelector((state) => state.userDetails);
+    const {userImg} = userDetails[0];
   let [editmodeon, setEditmodeon] = useState(false);
 
   let togglePop = () => {
@@ -17,7 +19,7 @@ const Header = ({userImg, name, userName, bio, setName, setUserName, setBio}) =>
                   <img className="header-user-img" src={userImg} alt="User image"></img>
               </button>
           </div>
-          {editmodeon ? <EditUser toggle={togglePop} userImg={userImg} name={name} userName={userName} bio={bio} setName={setName} setUserName={setUserName} setBio={setBio}/> : null}
+          {editmodeon ? <EditUser toggle={togglePop}/> : null}
         </div>
     )
 }
