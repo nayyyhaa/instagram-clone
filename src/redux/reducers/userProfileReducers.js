@@ -16,7 +16,7 @@ const userReducer = (state, action) => {
     let {type, payload} = action;
     state = {...initialState};
     switch(type) {
-        case actionTypes.SET_USER_DETAILS: return state;
+        case actionTypes.GET_USER_DETAILS: return state;
         case actionTypes.EDIT_USER_DETAILS: return payload;
         default: return state;
     }

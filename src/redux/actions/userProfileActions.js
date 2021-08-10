@@ -1,9 +1,8 @@
 import { actionTypes } from '../constants/actionTypes';
 
-export const setUserDetails = (userDetails) => {
+export const getUserDetails = () => {
     return ({
-        type: actionTypes.SET_USER_DETAILS,
-        payload: userDetails
+        type: actionTypes.GET_USER_DETAILS
     })
 }
 
